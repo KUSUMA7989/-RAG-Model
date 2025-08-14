@@ -95,5 +95,5 @@ if st.session_state.vector is not None:
         st.info(f"Response time: {response_time:.2f} seconds")
 
     st.session_state.chat_history.append({"role": "assistant", "content": response["answer"]})
-else:
+  else:
     st.warning("Please process your documents before asking questions.")
