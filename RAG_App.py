@@ -15,29 +15,6 @@ import time
 load_dotenv()
 
 # Set up Groq API key
-groq_api_key = os.getenv("GROQ_API_KEY")
-
-# Alternative way using Streamlit secrets
-# groq_api_key = st.secrets["GROQ_API_KEY"]
-
-st.set_page_config(page_title="Dynamic RAG …
-[12:00 PM, 8/14/2025] S Fathima Minhaj: import streamlit as st
-from dotenv import load_dotenv
-import os
-from langchain_groq import ChatGroq
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain_core.prompts import ChatPromptTemplate
-from langchain.chains import create_retrieval_chain
-from langchain_community.vectorstores import FAISS
-from langchain_community.document_loaders import PyPDFLoader
-from langchain_huggingface import HuggingFaceEmbeddings
-import time
-
-# Load environment variables
-load_dotenv()
-
-# Set up Groq API key
 # groq_api_key = os.getenv("GROQ_API_KEY")
 groq_api_key = st.secrets["GROQ_API_KEY"]
 
@@ -97,7 +74,7 @@ for message in st.session_state.chat_history:
         st.markdown(message["content"])
 
 # Get user input
-if prompt_input := st.chat_input("Ask a question about your documents..."):
+if prompt_input = st.chat_input("Ask a question about your documents..."):
     if st.session_state.vector is not None:
         with st.chat_message("user"):
             st.markdown(prompt_input)
