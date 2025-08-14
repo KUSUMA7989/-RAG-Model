@@ -1,4 +1,4 @@
- import streamlit as st
+import streamlit as st
 from dotenv import load_dotenv
 import os
 from langchain_groq import ChatGroq
@@ -97,7 +97,7 @@ for message in st.session_state.chat_history:
         st.markdown(message["content"])
 
 # Get user input
-if prompt_input = st.chat_input("Ask a question about your documents..."):
+if prompt_input := st.chat_input("Ask a question about your documents..."):
     if st.session_state.vector is not None:
         with st.chat_message("user"):
             st.markdown(prompt_input)
